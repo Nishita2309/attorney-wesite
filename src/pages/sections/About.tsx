@@ -41,8 +41,8 @@ export default function About() {
         {/* ===== RIGHT IMAGE ===== */}
         <div>
           <img
-            src="/about-office.jpg"
-            alt="Law firm office"
+            src="/about-profile.jpeg"
+            alt="Attorney profile"
             className="rounded-2xl shadow-xl w-full object-cover"
           />
         </div>
