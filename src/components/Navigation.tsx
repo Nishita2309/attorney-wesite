@@ -119,11 +119,10 @@ export default function Navigation() {
 
         {/* ================= MAIN NAV ================= */}
         <nav
-          className={`border-b transition ${
-            isScrolled
-              ? 'bg-background/95 backdrop-blur shadow-sm'
-              : 'bg-background'
-          }`}
+          className={`border-b transition ${isScrolled
+            ? 'bg-background/95 backdrop-blur shadow-sm'
+            : 'bg-background'
+            }`}
         >
           <div className="w-full px-6">
             <div className="flex items-center h-20">
@@ -146,7 +145,7 @@ export default function Navigation() {
               </Link>
 
               {/* DESKTOP NAV */}
-              <div className="hidden md:flex items-center gap-2 ml-auto">
+              <div className="hidden md:flex items-center gap-2 ms-auto">
                 {navLinks.map((link) =>
                   isRouteLink(link) ? (
                     <Link key={link.label} to={link.href}>
@@ -182,7 +181,7 @@ export default function Navigation() {
               {/* MOBILE BUTTON */}
               <button
                 onClick={() => setIsMobileOpen((prev) => !prev)}
-                className="md:hidden ml-auto p-2"
+                className="md:hidden ms-auto p-2"
               >
                 {isMobileOpen ? (
                   <X className="h-5 w-5" />
@@ -192,6 +191,45 @@ export default function Navigation() {
               </button>
             </div>
           </div>
+
+          {/* MOBILE NAV MENU */}
+          {isMobileOpen && (
+            <div className="md:hidden border-t bg-background/95 backdrop-blur absolute w-full max-h-[calc(100vh-80px)] overflow-y-auto shadow-lg z-40">
+              <div className="flex flex-col p-4 space-y-4">
+                {navLinks.map((link) =>
+                  isRouteLink(link) ? (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      onClick={() => setIsMobileOpen(false)}
+                      className="block px-4 py-3 pb-3 text-base font-medium rounded-md hover:bg-muted hover:text-accent transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <button
+                      key={link.label}
+                      onClick={() => {
+                        link.action();
+                        setIsMobileOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-3 text-base font-medium rounded-md hover:bg-muted hover:text-accent transition-colors"
+                    >
+                      {link.label}
+                    </button>
+                  )
+                )}
+
+                <div className="pt-4 border-t">
+                  <Link to="/consultation" onClick={() => setIsMobileOpen(false)}>
+                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                      {t('hero.cta')}
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
         </nav>
       </header>
 

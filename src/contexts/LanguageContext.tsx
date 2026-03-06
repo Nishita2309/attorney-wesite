@@ -13,9 +13,9 @@ const translations = {
     // Navigation
     'nav.home': 'Accueil',
     'nav.about': 'Le Cabinet',
-    'nav.services': 'Services',
-    'nav.clients': 'Clients',
-    'nav.contact': 'Contact',
+    'nav.services': 'Nos Services',
+    'nav.clients': 'Nos Clients',
+    'nav.contact': 'Nous Contacter',
 
     // Hero
     'hero.title': 'Cabinet d\'avocats Y. Mesraoui',
