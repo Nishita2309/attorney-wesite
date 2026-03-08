@@ -1,9 +1,9 @@
 import { Briefcase, Building2 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/ui/card';
 
 export default function Services() {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   const services = [
     {

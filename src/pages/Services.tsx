@@ -1,10 +1,10 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/pages/sections/Footer';
 import { Briefcase, Building2 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 
 export default function Services() {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   const services = [
     {

@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 
 interface ConsultationModalProps {
@@ -7,7 +7,7 @@ interface ConsultationModalProps {
 }
 
 export default function ConsultationModal({ onClose }: ConsultationModalProps) {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   return createPortal(
     <div

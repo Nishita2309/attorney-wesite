@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -16,7 +16,8 @@ type NavLink =
   | { label: string; action: () => void };
 
 export default function Navigation() {
-  const { language, setLanguage, t } = useLanguage();
+  const { t, i18n } = useTranslation();
+  const language = i18n.language;
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,6 +59,7 @@ export default function Navigation() {
     return 'href' in link;
   };
 
+  const currentLang = language?.split('-')[0] ?? 'fr';
   const languageNames: Record<string, string> = {
     fr: 'Français',
     ar: 'العربية',
@@ -99,7 +101,7 @@ export default function Navigation() {
                   className="text-primary-foreground hover:text-accent hover:bg-white/10 gap-2"
                 >
                   <Globe className="h-4 w-4" />
-                  {languageNames[language]}
+                  {languageNames[currentLang]}
                 </Button>
               </DropdownMenuTrigger>
 
@@ -107,7 +109,7 @@ export default function Navigation() {
                 {(['fr', 'ar', 'en'] as const).map((lang) => (
                   <DropdownMenuItem
                     key={lang}
-                    onClick={() => setLanguage(lang)}
+                    onClick={() => i18n.changeLanguage(lang)}
                   >
                     {languageNames[lang]}
                   </DropdownMenuItem>

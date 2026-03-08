@@ -1,4 +1,4 @@
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useTranslation } from 'react-i18next'
 
 /* ================= CLIENT LOGOS ================= */
 const clientLogos = [
@@ -11,7 +11,7 @@ const clientLogos = [
 ]
 
 export default function Clients() {
-  const { t } = useLanguage()
+  const { t } = useTranslation()
 
   return (
     <section id="clients" className="py-24 bg-background">

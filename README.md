@@ -24,7 +24,8 @@ A professional, modern website for **Cabinet d'avocats Y. Mesraoui**, a law firm
 
 - **Framework**: [React 19](https://react.dev/) with TypeScript
 - **Build Tool**: [Vite 7](https://vite.dev/)
-- **Routing**: [Wouter](https://github.com/molefrog/wouter)
+- **Internationalization**: [react-i18next](https://react.i18next.com/) with [i18next](https://www.i18next.com/) and [i18next-browser-languagedetector](https://github.com/i18next/i18next-browser-languageDetector) (JSON locales, localStorage persistence, RTL/LTR auto-switching)
+- **Routing**: [React Router](https://reactrouter.com/)
 - **UI Components**: Custom components with shadcn/ui patterns
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Fonts**: Cormorant Garamond (headings), Inter (body), Cairo (Arabic)
@@ -85,12 +86,16 @@ attorney-website/
 │   │   ├── ui/           # Base UI components (Button, Card, etc.)
 │   │   ├── Navigation.tsx # Main navigation component
 │   │   └── ErrorBoundary.tsx
+│   ├── locales/           # i18n translations (JSON)
+│   │   ├── en/common.json
+│   │   ├── ar/common.json
+│   │   └── fr/common.json
 │   ├── contexts/          # React contexts
-│   │   ├── LanguageContext.tsx  # i18n translations
 │   │   └── ThemeContext.tsx     # Theme management
 │   ├── pages/             # Page components
 │   │   ├── Home.tsx      # Main landing page
 │   │   └── NotFound.tsx  # 404 page
+│   ├── i18n.ts            # i18n configuration
 │   ├── App.tsx           # Main application component
 │   ├── App.css           # Global styles
 │   ├── index.css         # Tailwind and base styles

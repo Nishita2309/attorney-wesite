@@ -1,8 +1,8 @@
 import { Scale } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <section

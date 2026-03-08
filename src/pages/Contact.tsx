@@ -1,10 +1,10 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/pages/sections/Footer';
 import { MapPin, Phone, Mail } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <>

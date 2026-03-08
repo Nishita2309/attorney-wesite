@@ -1,8 +1,8 @@
 import { MapPin, Phone, Mail } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-primary text-primary-foreground pt-14 pb-8">

@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/pages/sections/Footer';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 
 const clientLogos = [
   '/clients/cms.png',
@@ -12,7 +12,7 @@ const clientLogos = [
 ];
 
 export default function Clients() {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <>
