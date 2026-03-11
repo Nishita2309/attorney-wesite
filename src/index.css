@@ -8,7 +8,9 @@
 
 :root {
   --radius: 0.5rem;
+}
 
+.light {
   --background: 0 0% 97%;
   --foreground: 222 47% 11%;
 
@@ -30,6 +32,30 @@
   --border: 220 13% 88%;
   --input: 220 13% 91%;
   --ring: 43 74% 53%;
+}
+
+.dark {
+  --background: 222 47% 9%;
+  --foreground: 0 0% 98%;
+
+  --card: 222 47% 13%;
+  --card-foreground: 0 0% 98%;
+
+  --primary: 222 47% 15%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 222 25% 18%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 222 25% 18%;
+  --muted-foreground: 220 9% 70%;
+
+  --accent: 43 74% 53%;
+  --accent-foreground: 222 47% 9%;
+
+  --border: 222 19% 25%;
+  --input: 222 19% 25%;
+  --ring: 43 74% 60%;
 }
 
 /* ===============================

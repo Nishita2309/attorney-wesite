@@ -7,9 +7,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Globe, Phone, Mail, Menu, X } from 'lucide-react';
+import { Globe, Phone, Mail, Menu, X, Moon, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ConsultationModal from '@/pages/ConsultationModal';
+import { useTheme } from '@/contexts/ThemeContext';
 
 type NavLink =
   | { label: string; href: string }
@@ -18,6 +19,7 @@ type NavLink =
 export default function Navigation() {
   const { t, i18n } = useTranslation();
   const language = i18n.language;
+  const { theme, setTheme } = useTheme();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -93,29 +95,45 @@ export default function Navigation() {
               </a>
             </div>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-primary-foreground hover:text-accent hover:bg-white/10 gap-2"
-                >
-                  <Globe className="h-4 w-4" />
-                  {languageNames[currentLang]}
-                </Button>
-              </DropdownMenuTrigger>
-
-              <DropdownMenuContent align="end">
-                {(['fr', 'ar', 'en'] as const).map((lang) => (
-                  <DropdownMenuItem
-                    key={lang}
-                    onClick={() => i18n.changeLanguage(lang)}
+            <div className="flex items-center gap-2">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-primary-foreground hover:text-accent hover:bg-white/10 gap-2"
                   >
-                    {languageNames[lang]}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+                    <Globe className="h-4 w-4" />
+                    {languageNames[currentLang]}
+                  </Button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent align="end">
+                  {(['fr', 'ar', 'en'] as const).map((lang) => (
+                    <DropdownMenuItem
+                      key={lang}
+                      onClick={() => i18n.changeLanguage(lang)}
+                    >
+                      {languageNames[lang]}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-primary-foreground hover:text-accent hover:bg-white/10 p-2"
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
+              </Button>
+            </div>
           </div>
         </div>
 
