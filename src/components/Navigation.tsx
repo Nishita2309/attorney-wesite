@@ -7,10 +7,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Globe, Phone, Mail, Menu, X, Moon, Sun } from 'lucide-react';
+import { Globe, Phone, Mail, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ConsultationModal from '@/pages/ConsultationModal';
-import { useTheme } from '@/contexts/ThemeContext';
 
 type NavLink =
   | { label: string; href: string }
@@ -19,7 +18,6 @@ type NavLink =
 export default function Navigation() {
   const { t, i18n } = useTranslation();
   const language = i18n.language;
-  const { theme, setTheme } = useTheme();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,6 +66,27 @@ export default function Navigation() {
     en: 'English',
   };
 
+  const getNavItemClassName = () => {
+    return [
+      'relative',
+      'px-3 py-2',
+      'text-sm font-medium',
+      'bg-transparent',
+      'hover:bg-transparent',
+      'focus-visible:bg-transparent',
+      'text-foreground',
+      'hover:text-accent',
+      'transition-colors',
+      'after:content-[""]',
+      'after:absolute after:left-0 after:-bottom-0.5',
+      'after:h-[2px] after:w-full after:bg-accent',
+      'after:origin-left',
+      'after:transition-transform after:duration-300 after:ease-out',
+      'after:scale-x-0',
+      'hover:after:scale-x-100',
+    ].join(' ');
+  };
+
   return (
     <>
       {/* ================= HEADER WRAPPER ================= */}
@@ -101,7 +120,7 @@ export default function Navigation() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="text-primary-foreground hover:text-accent hover:bg-white/10 gap-2"
+                    className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10 gap-2"
                   >
                     <Globe className="h-4 w-4" />
                     {languageNames[currentLang]}
@@ -119,20 +138,6 @@ export default function Navigation() {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-primary-foreground hover:text-accent hover:bg-white/10 p-2"
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                aria-label="Toggle theme"
-              >
-                {theme === 'dark' ? (
-                  <Sun className="h-4 w-4" />
-                ) : (
-                  <Moon className="h-4 w-4" />
-                )}
-              </Button>
             </div>
           </div>
         </div>
@@ -169,19 +174,19 @@ export default function Navigation() {
                 {navLinks.map((link) =>
                   isRouteLink(link) ? (
                     <Link key={link.label} to={link.href}>
-                      <Button variant="ghost" size="sm">
+                      <span className={getNavItemClassName()}>
                         {link.label}
-                      </Button>
+                      </span>
                     </Link>
                   ) : (
-                    <Button
+                    <button
                       key={link.label}
-                      variant="ghost"
-                      size="sm"
                       onClick={link.action}
+                      className={getNavItemClassName()}
+                      type="button"
                     >
                       {link.label}
-                    </Button>
+                    </button>
                   )
                 )}
 
@@ -222,7 +227,23 @@ export default function Navigation() {
                       key={link.label}
                       to={link.href}
                       onClick={() => setIsMobileOpen(false)}
-                      className="block px-4 py-3 pb-3 text-base font-medium rounded-md hover:bg-muted hover:text-accent transition-colors"
+                      className={[
+                        'block',
+                        'px-4 py-3 pb-3',
+                        'text-base font-medium',
+                        'rounded-md',
+                        'hover:bg-muted',
+                        'transition-colors',
+                        'relative',
+                        'after:content-[""]',
+                        'after:absolute after:left-4 after:right-4 after:-bottom-0.5',
+                        'after:h-[2px] after:bg-accent',
+                        'after:origin-left',
+                        'after:transition-transform after:duration-300 after:ease-out',
+                        'after:scale-x-0',
+                        'hover:after:scale-x-100',
+                        'hover:text-accent',
+                      ].join(' ')}
                     >
                       {link.label}
                     </Link>

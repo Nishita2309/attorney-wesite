@@ -1,4 +1,4 @@
-import { Briefcase, Building2 } from 'lucide-react';
+
 import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/ui/card';
 
@@ -7,13 +7,11 @@ export default function Services() {
 
   const services = [
     {
-      icon: Briefcase,
       title: t('services.business.title'),
       desc: t('services.business.desc'),
       image: '/services/services-business.jpg', // add your image path
     },
     {
-      icon: Building2,
       title: t('services.banking.title'),
       desc: t('services.banking.desc'),
       image: '/services/services-banking.jpg', // add your image path
@@ -49,10 +47,6 @@ export default function Services() {
 
               {/* Content */}
               <div className="p-8 bg-card">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                  <service.icon className="h-8 w-8 text-accent" />
-                </div>
-
                 <h3 className="font-heading text-xl md:text-2xl font-semibold mb-4">
                   {service.title}
                 </h3>

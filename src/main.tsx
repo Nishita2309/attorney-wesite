@@ -8,7 +8,7 @@ import { ThemeProvider } from './contexts/ThemeContext'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ThemeProvider defaultTheme="light" storageKey="ym-law-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="ym-law-theme">
       <BrowserRouter>
         <App />
       </BrowserRouter>

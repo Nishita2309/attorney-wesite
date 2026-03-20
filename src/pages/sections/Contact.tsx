@@ -7,10 +7,10 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-20 md:py-32 text-white overflow-hidden"
+      className="relative py-20 md:py-32 text-primary-foreground overflow-hidden"
     >
       <div className="absolute inset-0 bg-cover bg-center bg-[url('/contact-bg.jpg')]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/95" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/90" />
 
       <div className="container relative z-10 px-4">
         <div className="text-center mb-16">
@@ -22,35 +22,35 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Address */}
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-10 text-center shadow-xl hover:-translate-y-2 transition">
-            <MapPin className="h-12 w-12 text-accent mx-auto mb-6" />
-            <h3 className="font-heading text-xl md:text-2xl mb-4">
+          <div className="bg-primary-foreground/10 backdrop-blur-xl border border-primary-foreground/20 rounded-2xl p-8 text-center shadow-xl hover:-translate-y-2 transition flex flex-col items-center">
+            <MapPin className="h-10 w-10 text-accent mx-auto mb-4" />
+            <h3 className="font-heading text-xl mb-4">
               {t('contact.address')}
             </h3>
-            <p className="text-white/80 text-sm md:text-base">
+            <p className="text-primary-foreground/80 text-base">
               {t('contact.address.value')}
             </p>
           </div>
 
           {/* Phone */}
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-10 text-center shadow-xl hover:-translate-y-2 transition">
-            <Phone className="h-12 w-12 text-accent mx-auto mb-6" />
-            <h3 className="font-heading text-xl md:text-2xl mb-4">
+          <div className="bg-primary-foreground/10 backdrop-blur-xl border border-primary-foreground/20 rounded-2xl p-8 text-center shadow-xl hover:-translate-y-2 transition flex flex-col items-center">
+            <Phone className="h-10 w-10 text-accent mx-auto mb-4" />
+            <h3 className="font-heading text-xl mb-4">
               {t('contact.phone')}
             </h3>
-            <p className="text-white/80 text-sm md:text-base">
+            <p className="text-primary-foreground/80 text-base">
               +212 5 20 53 44 80 <br />
               +212 6 89 81 15 98
             </p>
           </div>
 
           {/* Email */}
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-10 text-center shadow-xl hover:-translate-y-2 transition">
-            <Mail className="h-12 w-12 text-accent mx-auto mb-6" />
-            <h3 className="font-heading text-xl md:text-2xl mb-4">
+          <div className="bg-primary-foreground/10 backdrop-blur-xl border border-primary-foreground/20 rounded-2xl p-8 text-center shadow-xl hover:-translate-y-2 transition flex flex-col items-center">
+            <Mail className="h-10 w-10 text-accent mx-auto mb-4" />
+            <h3 className="font-heading text-xl mb-4">
               {t('contact.email')}
             </h3>
-            <p className="text-white/80 text-sm md:text-base break-words">
+            <p className="text-primary-foreground/80 text-base break-words">
               maitremesraoui@gmail.com
             </p>
           </div>

@@ -7,13 +7,13 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-[70vh] md:h-[75vh] flex items-center justify-center text-white overflow-hidden"
+      className="relative h-[70vh] md:h-[75vh] flex items-center justify-center text-primary-foreground overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-[url('/hero.jpg')]" />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/95" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/90" />
 
       {/* Content */}
       <div className="container relative z-10 text-center px-4 max-w-4xl mx-auto">
@@ -24,7 +24,7 @@ export default function Hero() {
           {t('hero.title')}
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto">
           {t('hero.subtitle')}
         </p>
 

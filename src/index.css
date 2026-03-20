@@ -11,51 +11,53 @@
 }
 
 .light {
-  --background: 0 0% 97%;
-  --foreground: 222 47% 11%;
+  /* Reference site palette (light) */
+  --background: 60 7% 97%; /* #F8F8F7 */
+  --foreground: 60 2% 10%; /* #1A1A19 */
 
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card: 0 0% 100%; /* #FFFFFF */
+  --card-foreground: 60 2% 10%; /* #1A1A19 */
 
-  --primary: 222 47% 15%;
-  --primary-foreground: 0 0% 98%;
+  --primary: 60 2% 10%; /* #1A1A19 */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
 
-  --secondary: 220 14% 96%;
-  --secondary-foreground: 222 47% 11%;
+  --secondary: 45 7% 92%;
+  --secondary-foreground: 60 2% 10%;
 
-  --muted: 220 14% 96%;
-  --muted-foreground: 220 9% 46%;
+  --muted: 45 7% 92%;
+  --muted-foreground: 45 2% 52%; /* #858481 */
 
-  --accent: 43 74% 53%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 35 61% 55%; /* #D09945 */
+  --accent-foreground: 60 2% 10%;
 
-  --border: 220 13% 88%;
-  --input: 220 13% 91%;
-  --ring: 43 74% 53%;
+  --border: 40 7% 74%; /* softened from #34322D */
+  --input: 40 7% 74%;
+  --ring: 35 61% 55%;
 }
 
 .dark {
-  --background: 222 47% 9%;
-  --foreground: 0 0% 98%;
+  /* Reference site palette (dark) */
+  --background: 220 40% 4%; /* #06090F */
+  --foreground: 0 0% 100%; /* #FFFFFF */
 
-  --card: 222 47% 13%;
-  --card-foreground: 0 0% 98%;
+  --card: 60 2% 10%; /* #1A1A19 */
+  --card-foreground: 0 0% 100%;
 
-  --primary: 222 47% 15%;
-  --primary-foreground: 0 0% 98%;
+  --primary: 60 2% 10%; /* #1A1A19 */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 222 25% 18%;
-  --secondary-foreground: 0 0% 98%;
+  --secondary: 45 9% 19%; /* #34322D */
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 222 25% 18%;
-  --muted-foreground: 220 9% 70%;
+  --muted: 45 9% 19%;
+  --muted-foreground: 45 2% 52%; /* #858481 */
 
-  --accent: 43 74% 53%;
-  --accent-foreground: 222 47% 9%;
+  --accent: 35 61% 55%; /* #D09945 */
+  --accent-foreground: 220 40% 4%;
 
-  --border: 222 19% 25%;
-  --input: 222 19% 25%;
-  --ring: 43 74% 60%;
+  --border: 45 9% 19%; /* #34322D */
+  --input: 45 9% 19%;
+  --ring: 35 61% 55%;
 }
 
 /* ===============================
@@ -126,7 +128,7 @@
   }
 
   .cta-button {
-    box-shadow: 0 6px 14px rgba(212, 175, 55, 0.25);
+    box-shadow: 0 6px 14px hsl(var(--accent) / 0.18);
   }
 
   .gold-accent {
@@ -140,7 +142,7 @@
     left: 0;
     width: 4rem;
     height: 3px;
-    background: linear-gradient(90deg, hsl(43 74% 53%), transparent);
+    background: linear-gradient(90deg, hsl(var(--accent)), transparent);
   }
 }
 

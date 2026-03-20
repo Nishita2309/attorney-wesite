@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 pt-6 text-center text-sm text-primary-foreground/70">
+        <div className="border-t border-primary-foreground/10 pt-6 text-center text-sm text-primary-foreground/70">
           © 2026 Y. Mesraoui Law Firm. {t('footer.rights')}
         </div>
 
